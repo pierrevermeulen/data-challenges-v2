@@ -90,9 +90,21 @@ def save_model(reg):
     # saving the trained model to disk is mandatory to then beeing able to upload it to storage
     # Implement here
     print("saved model.joblib locally")
-    joblib.dump(reg, 'models/model.joblib')
+    storage_name= MODEL_NAME+'_'+MODEL_VERSION+'.joblib'
+    local_name = storage_name
+    joblib.dump(reg, local_name)
+
     # Implement here
-    storage_location = os.path.join(f"gs://{BUCKET_NAME}", 'models', MODEL_NAME+'_'+MODEL_VERSION+'.joblib')
+    storage_location = f"{BUCKET_NAME}"
+    print(storage_location)
+    print(storage_name)
+    print(local_name)
+    storage_client = storage.Client()
+    bucket = storage_client.get_bucket(storage_location)
+    blob = bucket.blob(local_name)
+    blob.upload_from_filename(local_name)
+
+
     print("uploaded model.joblib to gcp cloud storage under \n => {}".format(storage_location))
 
 
