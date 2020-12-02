@@ -1,11 +1,11 @@
 # path of the file to upload to gcp (the path of the file should be absolute or should match the directory where the make command is run)
-LOCAL_PATH=PATH_TO_FILE_train_1k.csv
+LOCAL_PATH="C:\Users\pitip\code\pierrevermeulen\TaxiFareModel\raw_data\train_1k.csv"
 
 # project id
-PROJECT_ID=XXX
+PROJECT_ID=wagon-bootcamp-1-297409
 
 # bucket name
-BUCKET_NAME=XXX
+BUCKET_NAME=wagon-bootcamp-1-297409
 
 # bucket directory in which to store the uploaded file (we choose to name this data as a convention)
 BUCKET_FOLDER=data
