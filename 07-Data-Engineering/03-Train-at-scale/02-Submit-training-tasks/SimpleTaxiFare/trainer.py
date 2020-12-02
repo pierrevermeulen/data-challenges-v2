@@ -16,7 +16,7 @@ import joblib
 
 ### GCP Storage - - - - - - - - - - - - - - - - - - - - - -
 
-BUCKET_NAME = 'XXX'
+BUCKET_NAME = 'wagon-bootcamp-1-297409'
 
 ##### Data  - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -90,8 +90,9 @@ def save_model(reg):
     # saving the trained model to disk is mandatory to then beeing able to upload it to storage
     # Implement here
     print("saved model.joblib locally")
-
+    joblib.dump(reg, 'models/model.joblib')
     # Implement here
+    storage_location = os.path.join(f"gs://{BUCKET_NAME}", 'models', MODEL_NAME+'_'+MODEL_VERSION+'.joblib')
     print("uploaded model.joblib to gcp cloud storage under \n => {}".format(storage_location))
 
 

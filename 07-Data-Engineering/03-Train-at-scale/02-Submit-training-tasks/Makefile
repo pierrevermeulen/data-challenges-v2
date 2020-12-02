@@ -8,7 +8,7 @@
 
 ### GCP Storage - - - - - - - - - - - - - - - - - - - - - -
 
-BUCKET_NAME=XXX
+BUCKET_NAME=wagon-bootcamp-1-297409
 
 ##### Data  - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -31,7 +31,7 @@ REGION=europe-west1
 
 PYTHON_VERSION=3.7
 FRAMEWORK=scikit-learn
-RUNTIME_VERSION=1.15
+RUNTIME_VERSION=2.2
 
 ##### Package params  - - - - - - - - - - - - - - - - - - -
 
